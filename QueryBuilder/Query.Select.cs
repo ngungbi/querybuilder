@@ -119,7 +119,7 @@ namespace SqlKata
             return SelectAggregate("max", column, filter);
         }
 
-        public Query Select<T>() {
+        public Query Select<T>() where T : class {
             var properties = typeof(T).GetProperties();
             var columns = new List<string>();
             foreach (var property in properties) {
